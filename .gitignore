@@ -1,0 +1,16 @@
+.venv/
+.runtime/
+__pycache__/
+.pytest_cache/
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+*.tsbuildinfo
+data/raw/*
+data/processed/*
+data/*.tar.gz
+models/*
+.env
+*.log
+.DS_Store

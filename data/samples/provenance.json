@@ -1,0 +1,20 @@
+{
+  "source": "Official NYC TLC yellow taxi records",
+  "sources": [
+    {
+      "file": "yellow_tripdata_2024-01.parquet",
+      "rows": 2964624
+    },
+    {
+      "file": "yellow_tripdata_2024-02.parquet",
+      "rows": 3007526
+    },
+    {
+      "file": "yellow_tripdata_2024-03.parquet",
+      "rows": 3582628
+    }
+  ],
+  "rows": 60099,
+  "seed": 42,
+  "method": "Bernoulli sample, approximately 20,000 original rows per month. No fabricated records."
+}

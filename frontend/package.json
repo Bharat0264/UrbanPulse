@@ -1,0 +1,45 @@
+{
+  "name": "urbanpulse",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@deck.gl/core": "9.4.0",
+    "@deck.gl/layers": "9.4.0",
+    "@deck.gl/mapbox": "9.4.0",
+    "@react-three/drei": "10.1.2",
+    "@react-three/fiber": "9.1.2",
+    "@tanstack/react-query": "5.80.7",
+    "echarts": "6.1.0",
+    "gsap": "3.13.0",
+    "lucide-react": "0.511.0",
+    "maplibre-gl": "6.16.0",
+    "motion": "12.16.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-router-dom": "7.18.4",
+    "three": "0.177.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@tailwindcss/vite": "4.1.8",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.3.0",
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4",
+    "@types/three": "0.177.0",
+    "@vitejs/plugin-react": "4.5.1",
+    "jsdom": "26.1.0",
+    "prettier": "3.8.1",
+    "tailwindcss": "4.1.8",
+    "typescript": "5.8.3",
+    "vite": "6.4.5",
+    "vitest": "5.0.5"
+  }
+}
