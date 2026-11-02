@@ -7,11 +7,7 @@
       "entrypoint": "main.py",
       "functions": {
         "main.py": {
-          "includeFiles": [
-            "../data/processed/**",
-            "../data/raw/taxi-zones.geojson",
-            "../data/raw/taxi_zone_lookup.csv"
-          ]
+          "includeFiles": "../data/{processed/**,raw/taxi-zones.geojson,raw/taxi_zone_lookup.csv}"
         }
       }
     },
