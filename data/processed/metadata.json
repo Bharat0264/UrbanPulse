@@ -1,0 +1,29 @@
+{
+  "dataset_id": "688f3258-1102-4567-80bd-0e84c8cfac12",
+  "source": "NYC TLC yellow taxi trip records",
+  "mode": "full",
+  "sample_method": null,
+  "months": [
+    "2024-01",
+    "2024-02",
+    "2024-03"
+  ],
+  "source_rows": 9554778,
+  "input_rows": 9554778,
+  "cleaned_rows": 9095282,
+  "rejected_rows": 459496,
+  "aggregate_rows": 3355823,
+  "input_bytes": 160389205,
+  "output_bytes": 52588949,
+  "start": "2024-01-01 00:00:00",
+  "end": "2024-03-31 23:00:00",
+  "spark_version": "3.5.6",
+  "master": "local[2]",
+  "partitions": 8,
+  "aggregation_seconds": 11.4827505,
+  "duration_seconds": 25.561272499999998,
+  "completed_at": "2026-10-27T20:35:55.451359",
+  "status": "completed",
+  "timezone": "America/New_York",
+  "cleaning": "Known zones 1\u2013263; pickup in selected months; duration 1\u2013180 min; distance (0,200] mi; fare [0,1000] USD. Null/NaN/invalid rows rejected."
+}

@@ -1,0 +1,125 @@
+{
+  "results": [
+    {
+      "rows": 10000,
+      "operation": "read_parquet",
+      "seconds": [
+        0.14486208300000003,
+        0.10164270799999997,
+        0.09186362499999978
+      ],
+      "median_seconds": 0.10164270799999997
+    },
+    {
+      "rows": 10000,
+      "operation": "filter",
+      "seconds": [
+        0.06477570799999999,
+        0.02418808299999986,
+        0.02921570799999973
+      ],
+      "median_seconds": 0.02921570799999973
+    },
+    {
+      "rows": 10000,
+      "operation": "group_zones",
+      "seconds": [
+        0.07540316600000008,
+        0.026782541999999854,
+        0.028710166000000203
+      ],
+      "median_seconds": 0.028710166000000203
+    },
+    {
+      "rows": 10000,
+      "operation": "hourly_demand",
+      "seconds": [
+        0.06020499999999984,
+        0.02796825000000025,
+        0.026721166999999824
+      ],
+      "median_seconds": 0.02796825000000025
+    },
+    {
+      "rows": 100000,
+      "operation": "read_parquet",
+      "seconds": [
+        0.10145058299999965,
+        0.09345829199999978,
+        0.09402220799999972
+      ],
+      "median_seconds": 0.09402220799999972
+    },
+    {
+      "rows": 100000,
+      "operation": "filter",
+      "seconds": [
+        0.027211416999999738,
+        0.026228791999999945,
+        0.018457832999999813
+      ],
+      "median_seconds": 0.026228791999999945
+    },
+    {
+      "rows": 100000,
+      "operation": "group_zones",
+      "seconds": [
+        0.0218580420000003,
+        0.021962792000000064,
+        0.018745875000000023
+      ],
+      "median_seconds": 0.0218580420000003
+    },
+    {
+      "rows": 100000,
+      "operation": "hourly_demand",
+      "seconds": [
+        0.03195916699999968,
+        0.02662949999999986,
+        0.029716125000000204
+      ],
+      "median_seconds": 0.029716125000000204
+    },
+    {
+      "rows": 1000000,
+      "operation": "read_parquet",
+      "seconds": [
+        0.22469625000000004,
+        0.21391670800000018,
+        0.20612599999999937
+      ],
+      "median_seconds": 0.21391670800000018
+    },
+    {
+      "rows": 1000000,
+      "operation": "filter",
+      "seconds": [
+        0.022003291999999952,
+        0.01954579199999973,
+        0.020447459000000556
+      ],
+      "median_seconds": 0.020447459000000556
+    },
+    {
+      "rows": 1000000,
+      "operation": "group_zones",
+      "seconds": [
+        0.02998541599999971,
+        0.028129250000000106,
+        0.02708620900000014
+      ],
+      "median_seconds": 0.028129250000000106
+    },
+    {
+      "rows": 1000000,
+      "operation": "hourly_demand",
+      "seconds": [
+        0.12031966699999952,
+        0.11170970900000032,
+        0.10475504199999985
+      ],
+      "median_seconds": 0.11170970900000032
+    }
+  ],
+  "methodology": "Local[2], three measured repetitions. Filter/group operate on cached input. Read forces a distance sum, with OS filesystem caching possible. Row limits are not random samples. Not a distributed-cluster benchmark."
+}

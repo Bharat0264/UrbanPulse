@@ -2,9 +2,5 @@ fastapi==0.115.12
 uvicorn==0.34.2
 pydantic==2.11.4
 duckdb==1.2.2
-pandas==2.2.3
-pyarrow==19.0.1
-scikit-learn==1.6.1
 numpy==2.0.2
-joblib==1.4.2
 reportlab==4.4.0

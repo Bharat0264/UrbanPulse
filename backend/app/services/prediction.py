@@ -1,19 +1,19 @@
 import json
 from functools import lru_cache
-import joblib
-import pandas as pd
 from .config import MODELS
 from .analytics import metadata
-try:  # Vercel loads the backend service with backend/ as sys.path.
-    from ml.train import features, FEATURES
-except ImportError:  # Local package execution: python -m backend.app.main
-    from ...ml.train import features, FEATURES
 
 @lru_cache(maxsize=2)
 def artifact(modified):
     return joblib.load(MODELS/'forecast.joblib')
 
 def predict(zone):
+    import joblib
+    import pandas as pd
+    try:  # Vercel loads the backend service with backend/ as sys.path.
+        from ml.train import features, FEATURES
+    except ImportError:  # Local package execution: python -m backend.app.main
+        from ...ml.train import features, FEATURES
     saved=artifact((MODELS/'forecast.joblib').stat().st_mtime_ns)
     if saved['dataset_id']!=metadata()['dataset_id']:
         raise ValueError('Model is stale after reprocessing. Run model training again.')
