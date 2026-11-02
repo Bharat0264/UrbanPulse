@@ -2,9 +2,9 @@ import json
 from functools import lru_cache
 import joblib
 import pandas as pd
-from backend.app.services.config import MODELS
-from backend.app.services.analytics import metadata
-from backend.ml.train import features, FEATURES
+from .config import MODELS
+from .analytics import metadata
+from ...ml.train import features, FEATURES
 
 @lru_cache(maxsize=2)
 def artifact(modified):

@@ -6,8 +6,8 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
-from backend.app.services.analytics import query, metadata
-from backend.app.services.config import MODELS
+from ..app.services.analytics import query, metadata
+from ..app.services.config import MODELS
 FEATURES=['hour','weekday','month','weekend','zone','lag1','lag24','mean24','std24']
 
 def features(series, zone):

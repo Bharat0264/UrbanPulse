@@ -7,10 +7,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
 from pydantic import ValidationError
 from reportlab.pdfgen import canvas
-from backend.app.schemas.models import Filters, TableResponse, Overview, ForecastResponse, DatasetMetadata
-from backend.app.services import analytics as a
-from backend.app.services.config import ROOT, DATA, MODELS, ORIGIN
-from backend.app.services.prediction import predict
+from .schemas.models import Filters, TableResponse, Overview, ForecastResponse, DatasetMetadata
+from .services import analytics as a
+from .services.config import ROOT, DATA, MODELS, ORIGIN
+from .services.prediction import predict
 
 app=FastAPI(title='UrbanPulse API',version='1.0.0')
 app.add_middleware(CORSMiddleware,allow_origins=[ORIGIN],allow_methods=['GET'],allow_headers=['*'])

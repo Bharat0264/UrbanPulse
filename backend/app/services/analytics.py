@@ -3,8 +3,8 @@ import json
 from functools import lru_cache
 import duckdb
 import numpy as np
-from backend.app.services.config import ROOT, DATA
-from backend.app.schemas.models import Filters
+from .config import ROOT, DATA
+from ..schemas.models import Filters
 
 @lru_cache(maxsize=1)
 def zones():
