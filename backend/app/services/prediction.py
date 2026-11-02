@@ -4,7 +4,10 @@ import joblib
 import pandas as pd
 from .config import MODELS
 from .analytics import metadata
-from ...ml.train import features, FEATURES
+try:  # Vercel loads the backend service with backend/ as sys.path.
+    from ml.train import features, FEATURES
+except ImportError:  # Local package execution: python -m backend.app.main
+    from ...ml.train import features, FEATURES
 
 @lru_cache(maxsize=2)
 def artifact(modified):
