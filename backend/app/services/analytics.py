@@ -3,12 +3,12 @@ import json
 from functools import lru_cache
 import duckdb
 import numpy as np
-from .config import ROOT, DATA
+from .config import DATA_ROOT, DATA
 from ..schemas.models import Filters
 
 @lru_cache(maxsize=1)
 def zones():
-    with (ROOT/'data/raw/taxi_zone_lookup.csv').open() as f:
+    with (DATA_ROOT/'raw/taxi_zone_lookup.csv').open() as f:
         return {int(r['LocationID']):r for r in csv.DictReader(f)}
 
 def metadata():

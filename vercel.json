@@ -7,7 +7,7 @@
       "entrypoint": "main.py",
       "functions": {
         "main.py": {
-          "includeFiles": "../data/{processed/**,raw/taxi-zones.geojson,raw/taxi_zone_lookup.csv}"
+          "includeFiles": "runtime-data/**"
         }
       }
     },

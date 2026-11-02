@@ -9,7 +9,7 @@ from pydantic import ValidationError
 from reportlab.pdfgen import canvas
 from .schemas.models import Filters, TableResponse, Overview, ForecastResponse, DatasetMetadata
 from .services import analytics as a
-from .services.config import ROOT, DATA, MODELS, ORIGIN
+from .services.config import DATA_ROOT, DATA, MODELS, ORIGIN
 from .services.prediction import predict
 
 app=FastAPI(title='UrbanPulse API',version='1.0.0')
@@ -51,7 +51,7 @@ def analytics(kind:Literal['hourly-demand','daily-demand','zones','origin-destin
     return {'rows':a.table(kind,f),'filters':f,'units':'trips (fare in USD)'}
 
 @app.get('/api/geo/taxi-zones')
-def geography(): return json.loads((ROOT/'data/raw/taxi-zones.geojson').read_text())
+def geography(): return json.loads((DATA_ROOT/'raw/taxi-zones.geojson').read_text())
 
 @app.get('/api/zones')
 def zones(): return [{'id':k,'name':v['Zone'],'borough':v['Borough']} for k,v in a.zones().items() if k<=263]
