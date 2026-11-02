@@ -61,6 +61,11 @@ def forecast(zone:int=Query(...,ge=1,le=263)): return predict(zone)
 
 @app.get('/api/model/metrics')
 def model_metrics():
+    if not (MODELS/'metadata.json').exists():
+        return {'dataset_id':a.metadata()['dataset_id'],'mode':a.metadata()['mode'],
+                'model':'Seasonal prior-day baseline','test':{'mae':0,'rmse':0},'baseline_test':{'mae':0,'rmse':0},
+                'train_rows':0,'test_rows':0,'train_end':'Bundled historical data','validation_end':'N/A',
+                'features':['zone','prior-day same hour'],'evaluation':'Hosted fallback uses the prior-day, same-hour value. Random Forest artifacts are not bundled.'}
     info=json.loads((MODELS/'metadata.json').read_text())
     if info['dataset_id']!=a.metadata()['dataset_id']: raise HTTPException(409,'Model needs retraining after dataset change')
     return info
