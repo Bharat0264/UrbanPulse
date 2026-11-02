@@ -5,11 +5,15 @@
       "root": "backend",
       "framework": "fastapi",
       "entrypoint": "main.py",
-      "includeFiles": [
-        "../data/processed/**",
-        "../data/raw/taxi-zones.geojson",
-        "../data/raw/taxi_zone_lookup.csv"
-      ]
+      "functions": {
+        "main.py": {
+          "includeFiles": [
+            "../data/processed/**",
+            "../data/raw/taxi-zones.geojson",
+            "../data/raw/taxi_zone_lookup.csv"
+          ]
+        }
+      }
     },
     "frontend": {
       "root": "frontend",
